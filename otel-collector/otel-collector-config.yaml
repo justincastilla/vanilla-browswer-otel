@@ -6,9 +6,9 @@ receivers:
 
 exporters:
   otlp/elastic:
-    endpoint: 
+    endpoint: ${ELASTIC_ENDPOINT}
     headers:
-      Authorization: 
+      Authorization: "Bearer ${ELASTIC_TOKEN}"
 
   debug:
     verbosity: detailed
