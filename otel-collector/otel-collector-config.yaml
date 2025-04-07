@@ -6,9 +6,9 @@ receivers:
 
 exporters:
   otlp/elastic:
-    endpoint: 'https://dd3f08a9ef624626a795a5be561c8bb5.apm.us-west-2.aws.cloud.es.io:443'
+    endpoint: 
     headers:
-      Authorization: "Bearer 1q7pXaLbvVA4YMYWSP"
+      Authorization: 
 
   debug:  # ✅ Use this instead of the deprecated 'logging'
     verbosity: detailed
