@@ -1,4 +1,4 @@
-~This is the scribblings of a mad person.~
+# Vanilla Browser Otel example
 
 This is a simple example of instrumentation with Open Telemetry in the Browser. It is not attached to any particular framework, but relies on parcel to bundle a frontend Javascript file `app.js` with a simple `index.html` file.
 
