@@ -10,11 +10,11 @@ exporters:
     headers:
       Authorization: 
 
-  debug:  # ✅ Use this instead of the deprecated 'logging'
+  debug:
     verbosity: detailed
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [otlp/elastic, debug]  # ✅ Reference debug exporter here
+      exporters: [otlp/elastic, debug] 
