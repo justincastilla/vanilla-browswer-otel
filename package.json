@@ -1,0 +1,31 @@
+{
+  "name": "opentelemetry",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@opentelemetry/api": "^1.8.0",
+    "@opentelemetry/auto-instrumentations-web": "^0.46.0",
+    "@opentelemetry/context-zone": "^1.23.0",
+    "@opentelemetry/exporter-collector": "^0.25.0",
+    "@opentelemetry/exporter-otlp-http": "^0.26.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.43.0",
+    "@opentelemetry/instrumentation": "^0.43.0",
+    "@opentelemetry/instrumentation-document-load": "^0.43.0",
+    "@opentelemetry/instrumentation-user-interaction": "^0.43.0",
+    "@opentelemetry/otlp-exporter-base": "^0.200.0",
+    "@opentelemetry/propagator-b3": "^2.0.0",
+    "@opentelemetry/resources": "^1.23.0",
+    "@opentelemetry/sdk-trace-base": "^1.23.0",
+    "@opentelemetry/sdk-trace-web": "^1.23.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}

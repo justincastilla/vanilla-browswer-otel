@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Document Load Instrumentation Example</title>
+    <base href="/" />
+    <!--
+      https://www.w3.org/TR/trace-context/
+      Set the `traceparent` in the server's HTML template code. It should be
+      dynamically generated server side to have the server's request trace ID,
+      a parent span ID that was set on the server's request span, and the trace
+      flags to indicate the server's sampling decision
+      (01 = sampled, 00 = not sampled).
+      '{version}-{traceId}-{spanId}-{sampleDecision}'
+    -->
+    <meta
+      name="traceparent"
+      content="00-ab42124a3c573678d4d8b21ba52df3bf-d21f7bc17caa5aba-01"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <p>OpenTelemetry in the browser with Elastic as an Observability platform!</p>
+    <!-- Slider button that goes from 1 to 10 -->
+    <input onclick="emitSpan('slider-click-span')"
+      type="range"
+      id="slider"
+      min="1"
+      max="10"
+      value="5"
+      style="width: 300px"/><br/><br/>
+    <!-- Button that emits a span when clicked -->
+    <button id="button1" onclick="emitSpan('manual-button-click-span')">Click me</button>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

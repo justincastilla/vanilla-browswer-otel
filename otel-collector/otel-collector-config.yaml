@@ -1,0 +1,20 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: "0.0.0.0:4318"
+
+exporters:
+  otlp/elastic:
+    endpoint: 'https://dd3f08a9ef624626a795a5be561c8bb5.apm.us-west-2.aws.cloud.es.io:443'
+    headers:
+      Authorization: "Bearer 1q7pXaLbvVA4YMYWSP"
+
+  debug:  # ✅ Use this instead of the deprecated 'logging'
+    verbosity: detailed
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [otlp/elastic, debug]  # ✅ Reference debug exporter here
