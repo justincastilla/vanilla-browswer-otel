@@ -6,6 +6,7 @@ To address CORS, the span request from `app.js` is routed through an nginx rever
 
 ## Installation and Startup
 
+### Environment setup
 You will need an Elastic account with an `APM` endoint and token.
 
 Change the name of the `.env.example` file to `.env` and replace the variable values with your own endpoint and token values.
