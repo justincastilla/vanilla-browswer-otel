@@ -8,8 +8,7 @@ exporters:
   otlp/elastic:
     endpoint: ${ELASTIC_ENDPOINT}
     headers:
-      Authorization: "Bearer ${ELASTIC_TOKEN}"
-
+      Authorization: ${ELASTIC_TOKEN}
   debug:
     verbosity: detailed
 

@@ -18,11 +18,12 @@
       content="00-ab42124a3c573678d4d8b21ba52df3bf-d21f7bc17caa5aba-01"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <p>OpenTelemetry in the browser with Elastic as an Observability platform!</p>
     <!-- Slider button that goes from 1 to 10 -->
-    <input onclick="emitSpan('slider-click-span')"
+    <input
       type="range"
       id="slider"
       min="1"
@@ -30,7 +31,12 @@
       value="5"
       style="width: 300px"/><br/><br/>
     <!-- Button that emits a span when clicked -->
-    <button id="button1" onclick="emitSpan('manual-button-click-span')">Click me</button>
+    <button id="button1">Create a manual span!</button>
+    <br><br>
+    <input type="text" id="weatherInput" placeholder="Enter city name" />
+    <button id="getWeather">Get Weather</button>
+    <div id="weather"></div>
+    <br><br>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
