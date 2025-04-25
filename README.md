@@ -8,10 +8,8 @@ This project demonstrates a minimal, framework-agnostic example of capturing bro
 
 ```bash
 # Clone the repository
-https://github.com/justincastilla/vanilla-browswer-otel.git
+git clone https://github.com/justincastilla/vanilla-browser-otel.git
 cd vanilla-browswer-otel
-
-# Install dependencies
 npm install
 ```
 
@@ -22,7 +20,7 @@ npm install
 You will need credentials for Elastic APM to send telemetry data. Here's how:
 
 1. Log into your [Elastic Cloud Console](https://cloud.elastic.co/).
-2. Create or select an existing deployment.
+2. Create or select an existing deployment optimized for Observability.
 3. Navigate to **Observability > APM** and note the following:
    - APM Server URL (e.g., `https://<your-deployment>.apm.us-central1.gcp.elastic-cloud.com`)
    - API Key for sending data securely (e.g., `<Bearer your-token here>`)
@@ -54,17 +52,20 @@ The OTEL Collector receives telemetry data from the browser, optionally processe
 
 ## 4. Running the Project & Viewing Examples
 
-Start the NGINX reverse proxy server and the OTel Elastic Collector using Docker Compose:
+Ensure your docker container service is started. Run the NGINX reverse proxy server and the OTel Elastic Collector using Docker Compose:
 ```bash
 docker-compose up
 ```
 
-Then start the Parcel server:
+Open a new tab in your terminal to run the Parcel server:
+
 ```bash
 npm run dev
 ```
 
 This will serve `index.html` bundle your `app.js`, which contains various buttons and inputs that emit OpenTelemetry spans based on different types of instrumentation.
+
+Open the browser to `localhost:1234` and open the devtools to the Console view. You will see information appear in when button clicks occur. You can also check the network tab to view traces being sent out with their payloads.
 
 ---
 

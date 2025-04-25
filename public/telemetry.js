@@ -55,18 +55,22 @@ export function initTelemetry() {
     contextManager: new ZoneContextManager(),
   });
 
+  const autoInstSettings = {
+    '@opentelemetry/instrumentation-fetch': {
+      applyCustomAttributesOnSpan: automaticSpanMethod
+    },
+    '@opentelemetry/instrumentation-user-interaction': {
+      "events": ['click'],
+    },
+  }
+
   registerInstrumentations({
     instrumentations: [
-      new getWebAutoInstrumentations({
-        '@opentelemetry/instrumentation-xml-http-request': {
-          applyCustomAttributesOnSpan: automaticSpanMethod
-        },
-        '@opentelemetry/instrumentation-fetch': {
-          applyCustomAttributesOnSpan: automaticSpanMethod,
-        },
-      }),
+      new getWebAutoInstrumentations(autoInstSettings),
     ],
   });
+
+
 
   console.log('OpenTelemetry frontend initialized');
 }
