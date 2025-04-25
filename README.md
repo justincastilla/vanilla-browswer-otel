@@ -1,8 +1,8 @@
 # Vanilla Browser OpenTelemetry with Elastic Observability
 
-This project demonstrates a minimal, framework-agnostic example of capturing browser telemetry using OpenTelemetry and sending it to Elastic Observability. It walks through a progression from manual instrumentation, to automatic instrumentation, and a final hybrid approach, showing each step in action.
+This project demonstrates a minimal, framework-agnostic example of capturing browser telemetry using OpenTelemetry and sending it to Elastic Observability. It walks through a progression from manual instrumentation, to automatic instrumentation, and a final hybrid approach, showing each step in action. Accompanying slides may be found [here](slides/Linuxfest%20Northwest%20-%20Observability%20is%20for%20Frontend,%20Too!.pdf).
 
----
+
 
 ## 1. Installation
 
@@ -13,7 +13,7 @@ cd vanilla-browswer-otel
 npm install
 ```
 
----
+
 
 ## 2. Getting API Keys and Endpoints
 
@@ -36,7 +36,7 @@ ELASTIC_APM_ENDPOINT='https://<your-deployment>.apm.us-central1.gcp.elastic-clou
 ELASTIC_ENDPOINT='Bearer your-token here'
 ```
 
----
+
 
 ## 3. Breakdown of components
 
@@ -67,7 +67,6 @@ This will serve `index.html` bundle your `app.js`, which contains various button
 
 Open the browser to `localhost:1234` and open the devtools to the Console view. You will see information appear in when button clicks occur. You can also check the network tab to view traces being sent out with their payloads.
 
----
 
 ## 5. Exploring Manual and Automatic Instrumentation Progression
 
@@ -92,12 +91,11 @@ To understand the progression of OpenTelemetry instrumentation, follow this step
 
 All spans should be visible in Elastic Observability UI under the `vanilla-frontend` servicename.
 
----
+
 
 ## License
 [Apache 2.0](LICENSE)
 
----
 
 Feel free to fork, explore, and extend!
 
